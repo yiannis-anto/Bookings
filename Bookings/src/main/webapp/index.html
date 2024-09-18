@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOKING.COM</title>
+    <link rel="stylesheet" href="roomstyle.css">
+    <link rel="stylesheet" href="css/boostrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap-utilities.rtl.min.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.rtl.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/boot.css" type="text/css"/>
+    <link rel="stylesheet" href="cssv4/bootstrap.min.css" type="text/css">
+    
+
+
+
+    <script src="css/bootstrap.min.js"></script>
+    <script src="cssv4/bootstrap.min.js"></script>
+    <script src="roomjs.js"></script>
+   
+    </head>
+    <body id="body" onload = "openDB()">
+        
+        <nav  id ="lookingbar" class="navbar navbar-dark">
+            <div  id = "lookingtext" class="container-fluid px-1">
+                <span id = "lookingspan" class="navbar-text mx-auto text-white">LOOKING.COM</span>
+            </div>
+        </nav>
+        
+        <!--  Firstpage Start  -->
+        
+        <!-- sthn selida auth o xrhsths tha epileksei
+        an thelei na kanei eggrafh alliws an thelei na paei sth selida na kanei sindesi
+        sto susthma kathws epishs an einai admin h employee na pathsh to koumpi login as
+        admin or employee gia na paei sthn selida sindesis twn employees kai admin-->
+        
+        <div id ="firstpage">
+            
+            <div class="container-fluid vh-100 d-flex  justify-content-center align-items-center">
+                <div class="row justify-content-center">
+                    
+                  <div class="col-12 text-center align-items-center">
+                    <button id = "loginEmpAdminButton"  class="btn btn-primary" onclick="fromFirstPageToLoginEmpAdmin()">LOGIN AS ADMIN OR EMPLOYEE</button>
+                    <button id = "loginGuestButton" class="btn btn-primary" onclick = "fromFirstPageToLoginGuest()">LOGIN AS CUSTOMER</button>
+                    
+                  </div>
+                    
+                    <div id = "signupButtons" class="col-12 text-center align-items-center">
+                       
+                        <button id = "SignUpGuestButton" class="btn btn-primary" onclick = "fromFirstPageToSignUpGuestPage()">SIGN UP AS CUSTOMER</button>
+                    
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+        </div>
+        
+        <!--  Firstpage End  -->
+        
+        <!--  Login EmpAdminLoginPage Start  -->
+        
+        <!-- sthn selida auth o admin h o employee tha balei ta
+        stoixeia sindeshs tou kai an einai admin tha epileksei to radio admin alliws an
+        einai employee tha epileksei to radio employee -->
+        
+        <div id="EmpAdminLoginpage" >
+            
+            <div class="container-fluid">
+                <div class="row">
+                  <div class="col-12 mt-2">
+                    <button type="button" class="btn btn-primary  text-start" onclick="fromPageToLoginEmpAdminToFirstPage()">&larr;</button>
+                  </div>
+                </div>
+            </div>
+            
+            <div id = "loginContainerAdmEmp" class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-4 col-md-8 col-sm-10">
+                    <div id = "borderForEmpAdminLoginPage" class="border p-5 border-primary">
+                      <div class="mb-3">
+                        <label for="usernameInputAdminEmp" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="usernameInputAdminEmp">
+
+                      </div>
+                      <div class="mb-3">
+                        <label for="passwordInputAdminEmp" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="passwordInputAdminEmp">
+                      </div>
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"  name = "radios" id="AdminRadio" value="Admin" checked>
+                            <label class="form-check-label" for="AdminRadio">
+                              Admin
+                            </label>
+                        </div>
+                        
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio"  name = "radios" id="EmpRadio" value="Employee">
+                            <label class="form-check-label" for="EmpRadio">
+                              Employee
+                            </label>
+                        </div>
+
+                      <button type="submit" class="btn btn-primary" onclick="loginAdmin()">Login</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+        
+        
+         <!--  Login EmpAdminLoginPage End  -->
+         
+         <!-- GuestLoginPage Start -->
+         
+         <!--edw o xrhsths mporei na balei ta stoixeia tou gia na kanei login sto susthma alla 
+         epishs mporei na pathsei to koumpi login as guest gia na sindethei xwris account-->
+         
+         <div id="GuestLoginPage" >
+            
+            <div class="container-fluid">
+                <div class="row">
+                  <div class="col-12 mt-2">
+                    <button type="button" class="btn btn-primary  text-start" onclick="fromPageToLoginGuestToFirstPage()">&larr;</button>
+                  </div>
+                </div>
+            </div>
+            
+            <div id = "loginContainerGuest" class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-4 col-md-8 col-sm-10">
+                    <div id = "borderForGuestLoginPage" class="border p-5 border-primary">
+                        
+                      <div class="mb-3">
+                        <label for="usernameInputGuest" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="usernameInputGuest">
+
+                      </div>
+                      <div class="mb-3">
+                        <label for="passwordInputGuest" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="passwordInputGuest">
+                      </div>   
+                        
+                       <div class="mb-2">
+                      <button type="submit" class="btn btn-primary" onclick="guestLogin()">Login</button>
+                       </div>
+                        
+                     <div class="mb-4">
+                      <button type="submit" class="btn btn-primary" onclick="openGuestLoggedPage()">Continue as Guest</button>
+                     </div>
+                      
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+         
+         <!-- GuestLoginPage End -->
+         
+         <!-- GuestSignUpPage start -->
+         
+         <!-- sthn selida auth o xrhsths ftiaxnei logariasmo dhladh bazei merika stoixeia pou zhtountai -->
+         
+         <div id="GuestSignUpPage">
+         
+         <div class="container-fluid">
+                <div class="row">
+                  <div class="col-12 mt-2">
+                    <button type="button" class="btn btn-primary  text-start" onclick="fromSignUpGuestPageToFirstPage()">&larr;</button>
+                  </div>
+                </div>
+            </div>
+            
+            <div id = "SignUPContainerGuest" class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-4 col-md-8 col-sm-10">
+                    <div id = "borderForGuestSignUpPage" class="border p-5 border-primary">
+                        
+                      <div class="mb-3">
+                        <label for="usernameSignUpGuest" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="usernameSignUpGuest" onblur = " checkUsernamePerson()">
+
+                      </div>
+                        
+                      <div class="mb-3">
+                        <label for="passwordInputSignUpGuest" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="passwordInputSignUpGuest">
+                      </div>
+                        
+                      <div class="mb-3">
+                        <label for="passwordAgainInputSignUpGuest" class="form-label">Repeat Password</label>
+                        <input type="password" class="form-control" id="passwordAgainInputSignUpGuest">
+                      </div>
+                        
+                       <div class="mb-3">
+                        <label for="firstnameInputSignUpGuest" class="form-label">Firstname</label>
+                        <input type="text" class="form-control" id="firstnameInputSignUpGuest">
+                      </div>
+                        
+                      <div class="mb-3">
+                        <label for="lastnameInputSignUpGuest" class="form-label">Lastname</label>
+                        <input type="text" class="form-control" id="lastnameInputSignUpGuest">
+                      </div>
+                        
+                       <div class="mb-3">
+                        <label for="EmailInputSignUpGuest" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="EmailInputSignUpGuest">
+                      </div>
+                        
+                       <div class="mb-3">
+                        <label for="TelephoneInputSignUpGuest" class="form-label">Telephone</label>
+                        <input type="text" class="form-control" id="TelephoneInputSignUpGuest">
+                      </div>
+                        
+                         <div class="mb-3">
+                        <label for="birthdayInputSignUpGuest" class="form-label">Birthdate</label>
+                        <input type="date" class="form-control" id="birthdayInputSignUpGuest">
+                      </div>
+                        
+                        
+                        
+                        <div id ="divWarningMessageSignUpPage" class="alert alert-info">
+                            <h4 class="alert-heading">Warning!</h4>
+                            <p id = "warningMessageGuestSignUpPage"></p>
+                          </div>
+                        
+                      <button type="submit" class="btn btn-primary" onclick="checkValidGuestSignUpPage()" >Sign Up</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+             
+         </div>           
+         
+         <!-- GuestSignUpPage end -->
+         
+         <!-- Guest logged page start -->
+         
+         <!-- h selida auth anoigei molis sindethei o xrhsths kai
+         h epishs an kapoios sindethei ws episkepths kai molis anoiksei h selida tou emfanizontai ta rooms
+         pou yparxoyn sto systhma kai pou mporei na kanei krathsh se auta -->
+         
+         <div id = "guestloggedpage">
+             
+              
+         <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-12  d-flex justify-content-end">
+                    <button type="button" class="btn btn-primary  ml-auto mt-3" onclick="logout()">Logout</button>
+                  </div>
+                </div>
+            </div>
+             
+          <div  class="container-fluid  d-flex  justify-content-center align-items-center">
+                <div class="row justify-content-center" >
+                    <h3>Rooms</h3>
+                    <div id="buttonsContainer"></div>
+                </div>
+          </div>
+             
+             
+             
+         </div>
+         
+         <!-- Guest logged page end -->
+         
+         <!-- Make a Reservation page start -->
+         
+         <!-- H selida auth emfanizetai molis o xrhsths epileksei ena room
+         pou tou aresei gia na balei merika stoixeia kai na kataxwrhsei thn krathsh  tou -->
+         
+         <div id="makeAReservationPage">
+             
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-12 mt-2">
+                    <button type="button" class="btn btn-primary  text-start" onclick="fromMakeAReservationPageToGuestLoggedPage()">&larr;</button>
+                  </div>
+                </div>
+                  
+                  <div id = "MakeAReservationContainerGuest" class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-4 col-md-8 col-sm-10">
+                    <div id = "borderFormakeAReservationPagee" class="border p-5 mt-5 border-primary">
+                        
+                        <p id="roomNameAtMakeReservatonPage"></p>
+                         <div class="mb-3">
+                        <label for="DateInputMakeReservatonPage" class="form-label" >Date</label>
+                        <input type="date" class="form-control" id="DateInputMakeReservatonPage" onchange="checkDateForReservation()">
+                      </div>
+                        
+                      <div class="mb-3">
+                        <label for="fullnameMakeAReservationPage" class="form-label">Fullname</label>
+                        <input type="text" class="form-control" id="fullnameMakeAReservationPage">
+
+                      </div>
+                        
+                      
+                        
+                      <div class="mb-3">
+                        <label for="TelephoneNumMakeAReservationPage" class="form-label">Telephone</label>
+                        <input type="text" class="form-control" id="TelephoneNumMakeAReservationPage">
+                      </div>
+                        
+                         <p id ="priceForTheRoom"></p>
+                        
+                      <select id = "optionMenuForPayment" class="mb-3 form-select" aria-label="Default select example" onchange="showCardField()">
+                        <option selected>Choose a payment method</option>
+                        <option value="1">Cash</option>
+                        <option value="2">Credit card</option>
+                        <option value="3">Bank transfer</option>
+                      </select>
+                        
+                        <div id = "divForCardNumber" class="mb-3" style="display:none">
+                        <label for="CardNumberMakeAReservationPage" class="form-label">CardNumber</label>
+                        <input type="text" class="form-control" id="CardNumberMakeAReservationPage">
+                      </div>
+                         
+                       
+                        
+                      <button type="submit" class="btn btn-primary" onclick="checkToCallFunctionToAddReservationOnDB()">Book</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+                  
+                  
+             
+         </div>
+         </div>
+         
+         <!-- Make a Reservation page end -->
+         
+          <!-- admin logged page start -->
+          
+          <!-- h selida auth emfanizetai molis sindethei enas admin
+          kai tou emfanizontai krathseis pou den exoun ginei confirmed wste na tis kanei confirm -->
+         
+         <div id = "Adminloggedpage" style="display:none">
+             
+         <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-12  d-flex justify-content-end">
+                    <button type="button" class="btn btn-primary  ml-auto mt-3" onclick="logout()">Logout</button>
+                  </div>
+                </div>
+            </div>
+             
+          <div  class="container-fluid  d-flex  justify-content-center align-items-center">
+                <div class="row justify-content-center" >
+                    <h3>Reservations</h3>
+                    <div id="ReservationsContainer"></div>
+                </div>
+          </div>
+             
+             
+             
+         </div>
+         
+         <!-- Admin logged page end -->
+           
+    </body>
+</html>

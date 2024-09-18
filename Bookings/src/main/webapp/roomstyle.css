@@ -1,0 +1,81 @@
+
+
+#body {
+    background-color: #E9F1FA;
+}
+
+#lookingbar {
+    height:30px;
+    background-color: #00ABE4;
+}
+
+#lookingtext {
+    line-height: 0px;
+    font-size: 20px;
+    
+}   
+
+#loginGuestButton, #loginEmpAdminButton ,#SignUpGuestButton ,#SignUpEmpAdminButton {
+     background-color: #00ABE4;
+     border-style: none;
+     
+}
+
+#loginGuestButton:hover , #loginEmpAdminButton:hover, #SignUpGuestButton:hover ,#SignUpEmpAdminButton:hover {
+    opacity:0.3;
+}
+
+#EmpAdminLoginpage{
+    display: none;
+}
+
+#borderForEmpAdminLoginPage{
+   
+   border:2px solid #00ABE4;
+}
+
+#loginContainerAdmEmp , #loginContainerGuest{
+    margin-top:100px;
+}
+
+#GuestLoginPage{
+    display:none;
+}
+
+#signupButtons{
+    margin-top:20px;
+   
+}
+
+#GuestSignUpPage{
+    display:none;
+}
+
+#EmpAdminSignUpPage {
+    display:none;
+}
+
+#divWarningMessageSignUpPage {
+    display:none;
+}
+
+#divWarningMessageEmpAdminSignUpPage {
+    display:none;
+}
+
+#guestloggedpage{
+    display:none;
+}
+
+#makeAReservationPage {
+    display:none;
+}
+
+
+
+
+ 
+
+
+
+  
